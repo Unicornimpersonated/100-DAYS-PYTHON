@@ -15,10 +15,16 @@ def encrypt(original_text, shift_amount):
 
     for letter in original_text:
         shifted_position = alphabet.index(letter) + shift_amount # 7 -> 9
+        shifted_position %= len(alphabet)
+        #shifted_position = shifted_position % len(alphabet)
         cipher_text += alphabet[shifted_position]
 
-    print()
+    print(f"Here is the encoded result: {cipher_text}")
 
 # TODO-4: What happens when you try to shift z forwards by 9?Can you fix code?
+# solution: use modulo to get the remainder, take shifted_position % 26
 
 # TODO-3: Call the 'encrypt()' function and pass in the user inputs.You should be
+encrypt(original_text=text,shift_amount= shift)
+
+# riqumuijmjm
