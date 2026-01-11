@@ -5,12 +5,6 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 
 # TODO-2: What if the users enters a number, symbol or space?
 
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt: \n").lower()
-text = input("Type your message: \n").lower()
-shift = int(input("Enter shift number: \n"))
-
-
-
 def caesar(original_text,shift_amount,encode_or_decode):
     output_text = ""
     if encode_or_decode == "decode":
@@ -27,4 +21,17 @@ def caesar(original_text,shift_amount,encode_or_decode):
             
     print(f"Here is the {encode_or_decode}d result: {output_text}")
 
-caesar(original_text=text,shift_amount=shift,encode_or_decode=direction)
+# TODO-3: Can you figure out a way to restart  the cipher program?
+
+
+should_continue = True
+while should_continue:
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt: \n").lower()
+    text = input("Type your message: \n").lower()
+    shift = int(input("Enter shift number: \n"))
+
+    caesar(original_text=text,shift_amount=shift,encode_or_decode=direction)
+restart=input("Type 'yes' if yo want to go again else 'no' \n").lower
+if restart == 'no':
+    should_continue = False
+    print("Goodbye !!")
